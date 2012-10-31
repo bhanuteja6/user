@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @profile.name %>
+</p>
+
+<p>
+  <b>Dob:</b>
+  <%= @profile.dob %>
+</p>
+
+<p>
+  <b>Gender:</b>
+  <%= @profile.gender %>
+</p>
+
+<p>
+  <b>Languages:</b>
+  <%= @profile.languages %>
+</p>
+
+<p>
+  <b>Picture:</b>
+  <%= image_tag(@profile.picture) %>
+</p>
+
+<p>
+  <b>File:</b>
+  <%= @profile.file %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @profile.email %>
+</p>
+
+<p>
+  <b>Aboutme:</b>
+  <%= @profile.aboutme %>
+</p>
+
+
+<%= link_to 'Edit', edit_profile_path(@profile) %> |
+<%= link_to 'Back', profiles_path %>
