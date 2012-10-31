@@ -26,11 +26,14 @@
   </div>
   <div class="field">
     <%= f.label :gender %><br />
-    <%= f.text_field :gender %>
+    <%= f.radio_button :gender, "Male" %> Male
+    <%= f.radio_button :gender, "Female" %> Female
   </div>
   <div class="field">
     <%= f.label :languages %><br />
-    <%= f.text_field :languages %>
+   Telugu <%= f.check_box :languages, { :multiple => true }, 'telugu',nil %> 
+    Hindi <%= f.check_box :languages, { :multiple => true }, 'hindi',nil %> 
+   English<%= f.check_box :languages, { :multiple => true }, 'english',nil %>
   </div>
   <div class="field">
     <%= f.label :picture %><br />
@@ -38,7 +41,7 @@
   </div>
   <div class="field">
     <%= f.label :file %><br />
-    <%= f.text_field :file %>
+    <%= f.file_field :file %>
   </div>
   <div class="field">
     <%= f.label :email %><br />
@@ -46,7 +49,7 @@
   </div>
   <div class="field">
     <%= f.label :aboutme %><br />
-    <%= f.text_field :aboutme, :cols=>"50", :rows=>"15" %>
+    <%= f.text_area :aboutme, :cols=>"50", :rows=>"15" %>
   </div>
   <div class="actions">
     <%= f.submit %>
