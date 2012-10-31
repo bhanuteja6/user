@@ -1,3 +1,8 @@
+<%= javascript_include_tag('jquery.min', 'jquery.datepick')%>
+<%= stylesheet_link_tag('jquery.datepick')%>
+
+<script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script>
+
 <%= form_for(@profile) do |f| %>
   <% if @profile.errors.any? %>
     <div id="error_explanation">
@@ -17,7 +22,7 @@
   </div>
   <div class="field">
     <%= f.label :dob %><br />
-    <%= f.text_field :dob %>
+    <%= f.text_field :dob, :id => :popupDatepicker %>
   </div>
   <div class="field">
     <%= f.label :gender %><br />
@@ -41,9 +46,19 @@
   </div>
   <div class="field">
     <%= f.label :aboutme %><br />
-    <%= f.text_field :aboutme %>
+    <%= f.text_field :aboutme, :cols=>"50", :rows=>"15" %>
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+
+<script>
+$(function() {
+    $('#popupDatepicker').datepick({dateFormat: 'mm-dd-yyyy'});    
+});
+</script>
+
+<script type="text/javascript">
+       bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
+</script>
